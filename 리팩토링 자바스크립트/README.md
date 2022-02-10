@@ -15,3 +15,5 @@ GRASP : 일반적인 책임 할당 소프트웨어 패턴
 
 YAGNI : 나중에 필요 없어질 것을 고려
 
+
+github : https://github.com/gilbutITbook/006963

@@ -68,15 +68,10 @@ function train({ chords, label }) {
   }
 }
 
-function getNumberOfSongs() {
-  return songs.length;
-}
-
 function setLabelProbabilities(probability, count) {
   Object.keys(count).forEach(function (label) {
-    probability[label] = count[label] / getNumberOfSongs();
+    probability[label] = count[label] / songs.length;
   });
-  return probability;
 }
 
 function setChordCountsInLabels(totalSong, countInLabel) {
@@ -99,7 +94,7 @@ function setProbabilityOfChordsInLabels(probabilityOfChord, chordCount) {
   Object.keys(probabilityOfChord).forEach(function (i) {
     Object.keys(probabilityOfChord[i]).forEach(function (j) {
       probabilityOfChord[i][j] =
-        (probabilityOfChord[i][j] * 1.0) / getNumberOfSongs();
+        (probabilityOfChord[i][j] * 1.0) / songs.length;
     });
   });
   return probabilityOfChord;
